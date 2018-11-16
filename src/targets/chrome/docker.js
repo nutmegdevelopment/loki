@@ -81,9 +81,10 @@ function createChromeDockerTarget({
   // const runArgs = ['run', '--rm', '-d', '-P'];
   const runArgs = ['run', '--rm', '-P'];
 
-  if (!process.env.CI) {
-    runArgs.push(`--security-opt=seccomp=${__dirname}/docker-seccomp.json`);
-  }
+  console.log(process.env)
+  // if (!process.env.CI) {
+  //   runArgs.push(`--security-opt=seccomp=${__dirname}/docker-seccomp.json`);
+  // }
 
   if (baseUrl.indexOf('http://localhost') === 0) {
     const ip = getLocalIPAddress();
