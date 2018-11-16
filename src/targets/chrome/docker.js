@@ -78,7 +78,8 @@ function createChromeDockerTarget({
   let host;
   let dockerUrl = baseUrl;
   const dockerPath = 'docker';
-  const runArgs = ['run', '--rm', '-d', '-P'];
+  // const runArgs = ['run', '--rm', '-d', '-P'];
+  const runArgs = ['run', '--rm', '-P'];
 
   if (!process.env.CI) {
     runArgs.push(`--security-opt=seccomp=${__dirname}/docker-seccomp.json`);
